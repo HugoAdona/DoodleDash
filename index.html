@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoodleDash</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/ico" href="img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="header-buttons left">
+          <button id="newBtn" title="New Drawing">
+            <i class="fas fa-file"></i>
+          </button>
+          <button id="openBtn" title="Open Drawing">
+            <i class="fas fa-folder-open"></i>
+          </button>
+        </div>
+        <h1>DoodleDash</h1>
+        <div class="header-buttons right">
+          <button id="saveBtnHeader" title="Save Drawing">
+            <i class="fas fa-save"></i>
+          </button>
+          <button id="settingsBtn" title="Settings">
+            <i class="fas fa-cog"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <canvas id="drawingCanvas"></canvas>
+    <div class="toolbar">
+      <button id="clearBtn" title="Clear Canvas">
+        <i class="fas fa-trash"></i>
+      </button>
+      <button id="undoBtn" title="Undo"><i class="fas fa-undo"></i></button>
+      <button id="redoBtn" title="Redo"><i class="fas fa-redo"></i></button>
+      <button id="eraserBtn" title="Eraser">
+        <i class="fas fa-eraser"></i>
+      </button>
+      <button id="circleBtn" title="Draw Circle">
+        <i class="fas fa-circle"></i>
+      </button>
+      <button id="rectangleBtn" title="Draw Rectangle">
+        <i class="fas fa-square"></i>
+      </button>
+      <button id="lineBtn" title="Draw Line">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button id="textBtn" title="Insert Text">
+        <i class="fas fa-font"></i>
+      </button>
+    </div>
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <h2>Settings</h2>
+        <label for="brushSizeSetting">Brush Size:</label>
+        <input type="range" id="brushSizeSetting" min="1" max="50" value="5" />
+        <label for="colorPickerSetting">Brush Color:</label>
+        <input type="color" id="colorPickerSetting" value="#000000" />
+        <label for="brushTypeSetting">Brush Type:</label>
+        <select id="brushTypeSetting">
+          <option value="round">Round</option>
+          <option value="calligraphyBrush">Calligraphy Brush</option>
+          <option value="calligraphyPen">Calligraphy Pen</option>
+          <option value="airbrush">Airbrush</option>
+          <option value="oilBrush">Oil Brush</option>
+          <option value="crayon">Crayon</option>
+          <option value="marker">Marker</option>
+          <option value="naturalPencil">Natural Pencil</option>
+          <option value="watercolorBrush">Watercolor Brush</option>
+        </select>
+        <button id="applySettingsBtn">Apply</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

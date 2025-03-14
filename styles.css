@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  font-family: "Pacifico", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  width: calc(100% - 20px);
+  background-color: #ffa500;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-buttons.left {
+  margin-right: auto;
+}
+
+.header-buttons.right {
+  margin-left: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  flex-grow: 1;
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+header button:hover {
+  background-color: #e69100;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top: 2px solid #ffa500;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.toolbar button {
+  background-color: #ffa500;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.toolbar button:hover {
+  background-color: #e69100;
+}
+
+#drawingCanvas {
+  border: 2px solid #ffa500;
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  height: calc(100vh - 180px);
+  margin-top: 80px;
+  border-radius: 10px;
+  transition: border-color 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.closeBtn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.modal-content input[type="range"] {
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.modal-content input[type="color"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ffa500;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ffa500;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.modal-content button {
+  background-color: #ffa500;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.modal-content button:hover {
+  background-color: #e69100;
+}
